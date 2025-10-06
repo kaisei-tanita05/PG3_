@@ -3,62 +3,39 @@
 #include <stdlib.h>
 #include <vector>
 #include <list>
+#include <algorithm>
 
 using namespace std;
 
 int main() {
 
+	vector<int> a = { -10,321,-3,50,1 };
 
-	 // 山手線の駅名を双方向リストに格納
-	list<const char*> yamanote = {
-		"shinagawa", "osaki", "gotanda", "meguro", "ebisu", "shibuya", "harajuku",
-		"yoyogi", "shinjuku", "shin-okubo", "takadanobaba", "mejiro", "ikebukuro",
-		"otsuka", "sugamo", "komagome", "tabata", "nippori", "uguisudani",
-		"ueno", "okachimachi", "akihabara", "kanda", "tokyo", "yurakucho", "shimbashi",
-		"hamamatsucho", "tamachi"
-	};
+	cout << "全要素を表示します" << endl;
 
-
-	//双方向リスト
-	cout << "1970年" << endl;
-	for (auto itr = yamanote.begin(); itr != yamanote.end(); ++itr) {
-		cout << *itr<<",";
+	//全要素を表示
+	for (int i = 0; i < a.size(); i++) 
+	{
+		cout << a[i] << endl;
 	}
 
-	cout << endl; // ★ここで改行
-	
-	// 「nippori」の前に「nishi-nippori」を追加
-	for (auto itr = yamanote.begin(); itr != yamanote.end(); ++itr) {
-		if (string(*itr) == "nippori") {
-			yamanote.insert(itr, "nishi-nippori");
-			break; // 1回だけでOKなので抜ける
-		}
+	//昇順に並べ替え
+	sort(a.begin(), a.end());
+
+	cout << "全要素を表示します" << endl;
+
+	//全要素を表示
+	for (int i = 0; i < a.size(); i++) {
+		cout << a[i] << endl;
 	}
 
-	
+	vector<int>::iterator it;
 
-	//双方向リスト
-	cout << "2019年" << endl;
-	for (auto itr = yamanote.begin(); itr != yamanote.end(); ++itr) {
-		cout << *itr << ",";
+	it = find(a.begin(), a.end(), -3);
+
+	if (it != a.end()) {
+		cout << *it << endl;
 	}
-	
-	cout << endl; // ★ここで改行
-
-	for (auto itr = yamanote.begin(); itr != yamanote.end(); ++itr) {
-		if (string(*itr) == "tamachi") {
-			yamanote.insert(itr, "takanawa-gateway");
-			break; // 1回だけでOKなので抜ける
-		}
-	}
-
-	//双方向リスト
-	cout << "令和5年" << endl;
-	for (auto itr = yamanote.begin(); itr != yamanote.end(); ++itr) {
-		cout << *itr << ",";
-	}
-
-	cout << endl; // ★ここで改行
 
 	return 0;
 }
