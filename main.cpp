@@ -62,7 +62,7 @@ int main() {
 	//昇順に並べ替え
 	sort(IDNum.begin(), IDNum.end());
 
-	cout << "全要素を表示します" << endl;
+	cout << "学籍番号" << endl;
 
 	//全要素を表示
 	for (int i = 0; i < IDNum.size(); i++) {
