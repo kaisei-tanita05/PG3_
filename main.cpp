@@ -36,17 +36,6 @@ Type Min(Type a, Type b) {
 
 int main() {
 
-	/*int x = 114;
-	int y = 514;
-
-	printf("%d\n", calc(x, y));*/
-
-	/*float l = 3.64f;
-	float m = 3.64f;
-
-	printf("%f\n", calc(l,m));*/
-
-
 	//計算と結果出力
 	printf("%d\n", Min<int>(128, 256));
 	printf("%f\n", Min<float>(52.5f, 55.0f));
