@@ -29,7 +29,7 @@ int main() {
 	
 	// 「nippori」の前に「nishi-nippori」を追加
 	for (auto itr = yamanote.begin(); itr != yamanote.end(); ++itr) {
-		if (string(*itr) == "nippori") {
+		if (string(*itr) == "tabata") {
 			yamanote.insert(itr, "nishi-nippori");
 			break; // 1回だけでOKなので抜ける
 		}
