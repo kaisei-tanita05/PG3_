@@ -46,10 +46,8 @@ int main(void) {
 
     int dice_result = roll_dice();
 
-    // 関数ポインタにjudge_resultのアドレスを代入
     PFunc callback = judge_result;
 
-    // 関数ポインタ経由で呼び出す
     callback(dice_result);
 
 
