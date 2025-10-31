@@ -13,7 +13,7 @@ typedef void(*PFunc)(int);
 
 // サイコロの出目を決定する関数
 int roll_dice() {
-	return rand()%6;
+	return rand()%6+1;
 }
 
 
