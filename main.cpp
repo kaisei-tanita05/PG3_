@@ -22,7 +22,7 @@ public:
         if (Number1 < Number2)
             return static_cast<Type>(Number1);
         else
-            return static_cast<Type>(Number2);
+            return static_cast<Type2>(Number2);
     }
 
 private:
@@ -44,7 +44,7 @@ int main() {
     std::cout << "int(100)とfloat(50.0f)を比べて小さい数字を返す：" << intFloatTemplate.Min() << std::endl;
     std::cout << "int(80)とdouble(20.0)を比べて小さい数字を返す：" << intDoubleTemplate.Min() << std::endl;
     std::cout << "float(2.0f)とint(18)を比べて小さい数字を返す：" << floatIntTemplate.Min() << std::endl;
-    std::cout << "float(11.0f)とdouble(3.5)を比べて小さい数字を返す：" << doubleIntTemplate.Min() << std::endl;
+    std::cout << "float(11.0f)とdouble(3.5)を比べて小さい数字を返す：" << floatDoubleTemplate.Min() << std::endl;
     std::cout << "double(234.0)とint(123)を比べて小さい数字を返す：" << doubleIntTemplate.Min() << std::endl;
     std::cout << "double(400.1)とfloat(500.2)を比べて小さい数字を返す：" << doubleFloatTemplate.Min() << std::endl;
 
