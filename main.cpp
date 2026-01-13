@@ -5,30 +5,26 @@
 #include <list>
 #include <algorithm>
 #include <stdio.h>
-#include <cstdio>
-#include "IShape.h"
-#include "Circle.h"
-#include "Rectangle.h"
+#include <thread>
 
+using namespace std;
 
-int main(void) {
+void PrintThread(uint32_t num) {
+	cout << "thread" << num << endl;
+}
 
-	IShape* shape[2];
+int main() {
 
-	shape[0] = new CIRCLE;
-	shape[1] = new SQUARE;
+	// マルチスレッドではある
+	thread t1(PrintThread, 1);
+	t1.join();
 
-	printf("円の半径:4\n短形の底辺:2\n短形の高さ:3\n");
+	thread t2(PrintThread, 2);
+	t2.join();
 
-	//面積を計算
-	for (int i = 0; i < 2; i++)
-		shape[i]->Size();
-
-	printf("\n");
-
-	//面積を画面に表示
-	for (int i = 0; i < 2; i++)
-		shape[i]->Draw();
+	thread t3(PrintThread, 3);
+	t3.join();
 
 	return 0;
 }
+
